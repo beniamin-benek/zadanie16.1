@@ -23,7 +23,9 @@ class Main {
 
         System.out.println("Suma brutto: " + salesCalculator.calculateBruttoSum(products) + " zł.");
         System.out.println("Suma netto: " + salesCalculator.calculateNettoSum(products) + " zł.");
-        System.out.println("Suma VAT: " + salesCalculator.calculateVatSum(products) + " %.");
+        System.out.println("Suma VAT*: " + salesCalculator.calculateVatSum(products) + " zł.");
+        System.out.println("Suma VAT**: " + salesCalculator.calculateBruttoSum(products).subtract(salesCalculator.calculateNettoSum(products)) + " zł.");
+        System.out.println("\n* przyjmując, że zaokrąglamy wyliczoną sumę.\n** przyjmując, że sumujemy zaokrąglone ceny netto.");
 
     }
 

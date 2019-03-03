@@ -9,7 +9,8 @@ class Product {
 
     public Product(String name, BigDecimal bruttoPrice, BigDecimal vat) {
         this.name = name;
-        this.bruttoPrice = bruttoPrice;
+        //this.bruttoPrice = bruttoPrice;
+        setBruttoPrice(bruttoPrice);
         this.vat = vat;
     }
 
@@ -31,7 +32,10 @@ class Product {
     }
 
     public void setBruttoPrice(BigDecimal bruttoPrice) {
-        this.bruttoPrice = bruttoPrice;
+        BigDecimal zero = new BigDecimal("0");
+        int compare = (bruttoPrice.compareTo(zero)); //-1, 0 lub 1
+        if (compare <= -1) this.bruttoPrice = zero;
+        else this.bruttoPrice = bruttoPrice;
     }
 
     public BigDecimal getVat() {
